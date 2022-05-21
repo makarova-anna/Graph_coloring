@@ -1,6 +1,12 @@
 #include "Graph.h"
 
 
+bool inside(const set <int>& S, int a)
+{
+    auto search = S.find(a);
+    return (search != S.end());
+}
+
 void Graph::Add_edge(int u, int v)
 {
     Smeg[u].push_back(v);
@@ -12,7 +18,7 @@ void Graph::Print()
 {
     for (int i = 0; i < N_vertex; i++)
     {
-        cout << i << " columns: ";
+        cout << i << " column: ";
         for (int j = 0; j < Smeg[i].size(); j++)
         {
             cout << Smeg[i][j] << " ";
@@ -85,7 +91,14 @@ void Graph::Coloring()
         w = 0;
     }
 
-
+    std::sort(Colors.begin(), Colors.end());
+    int c = 1;
+    for (int i = 0; i < N_vertex - 1; i++)
+    {
+        if (Colors[i + 1] != Colors[i])
+            c++;
+    }
+    cout << c << endl;
 
 
 }
