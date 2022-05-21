@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <set>
 #include <list>
@@ -14,7 +15,7 @@ class Graph
   public:
 	  Graph(int V)
 	  {
-      this->num_vert = V;
+      this->N_vertex = V;
 		  Smeg = new vector <int>[V];
 	  }
 
