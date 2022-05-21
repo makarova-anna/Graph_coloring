@@ -1,4 +1,5 @@
-#include "Header.h"
+#include "Graph.h"
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -12,11 +13,11 @@ int main()
 	int N_vertex = 0;
 	int M_edges = 0;
 	int count = 0;
-  string s;
-  vector <int> one;
+    	string s;
+    	vector <int> one;
 	vector <int> two;
-
-  ifstream fin;
+	
+	ifstream fin;
 	fin.open("data/gc_4_1");
 
 	while (!fin.eof())
@@ -38,13 +39,15 @@ int main()
 				two.push_back(stoi(s));
 		}
 	}
-  
-  Graph MyGraph(N_vertex);
+
+	Graph MyGraph(N_vertex);
 	for (int i = 0; i < M_edges; i++)
 	{
-     MyGraph.Add_edge(one[i], two[i]);
+		MyGraph.Add_edge(one[i], two[i]);
 	}
-  cout << "nicee";
+
+	cout << "What've we got?  ";
+	MyGraph.Coloring();
 	fin.close();
 
 	return 0;
