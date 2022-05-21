@@ -26,4 +26,18 @@ void Graph::Coloring()
     vector <int> Colors(N_vertex);
 
     Colors[0] = 0;
+    for (int i = 1; i < N_vertex; i++)
+        Colors[i] = -1;
+
+    vector <bool> is_available(N_vertex); 
+    for (int j = 0; j < N_vertex; j++)
+        is_available[j] = false;
+
+    vector <int> Size_smeg(N_vertex);
+    for (int i = 0; i < N_vertex; i++)
+        Size_smeg[i] = Smeg[i].size();
+
+    sort(Size_smeg.begin(), Size_smeg.end(), std::greater<int>());
+    
+
 }
